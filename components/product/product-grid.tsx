@@ -1,11 +1,9 @@
 import { EmptyState } from "@/components/ui/empty-state";
-import {
-  ProductCard,
-  type ProductCardData,
-} from "@/components/product/product-card";
+import { ProductCard } from "@/components/product/product-card";
+import type { ProductPreview } from "@/types/product";
 
 type ProductGridProps = {
-  items: ProductCardData[];
+  items: ProductPreview[];
 };
 
 export function ProductGrid({ items }: ProductGridProps) {

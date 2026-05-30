@@ -2,19 +2,10 @@ import Link from "next/link";
 import { ArrowRight, BadgeCheck } from "lucide-react";
 import { Price } from "@/components/ui/price";
 import { ProductImage } from "@/components/product/product-image";
-
-export type ProductCardData = {
-  name: string;
-  slug: string;
-  description: string;
-  price: number;
-  imageUrl?: string | null;
-  stock?: number;
-  badge?: string;
-};
+import type { ProductPreview } from "@/types/product";
 
 type ProductCardProps = {
-  product: ProductCardData;
+  product: ProductPreview;
 };
 
 export function ProductCard({ product }: ProductCardProps) {

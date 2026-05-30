@@ -373,6 +373,18 @@ img {
   max-width: 760px;
 }
 
+.section-note {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--accent-deep);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  box-shadow: var(--shadow-soft);
+}
+
 .section-heading h2,
 .cta-strip h2 {
   font-size: clamp(1.8rem, 4vw, 3rem);
@@ -632,6 +644,13 @@ img {
 
 .loading-state span:nth-child(3) {
   animation-delay: 240ms;
+}
+
+.loading-screen {
+  min-height: 52vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
 }
 
 .product-detail {

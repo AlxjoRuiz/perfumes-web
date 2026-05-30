@@ -4,45 +4,21 @@ import { ArrowLeft, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Price } from "@/components/ui/price";
+import { getProductBySlug } from "@/lib/products";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 type ProductDetailPageProps = {
-  params: Promise<{
+  params: {
     slug: string;
-  }>;
+  };
 };
-
-const demoProducts = new Map([
-  [
-    "sauvage-intense",
-    {
-      name: "Sauvage Intense",
-      description:
-        "Una salida fresca y especiada con fondo ambarado, pensada para dejar huella.",
-      detail:
-        "Ideal para quien busca presencia, proyeccion y un estilo moderno que funcione en cualquier momento del dia.",
-      price: 385000,
-      stock: 12,
-    },
-  ],
-  [
-    "bleu-signature",
-    {
-      name: "Bleu Signature",
-      description:
-        "Perfil elegante y limpio con un aire versatil, ideal para uso diario o eventos.",
-      detail:
-        "Su equilibrio entre frescura y elegancia lo convierte en una fragancia facil de llevar y muy comercial.",
-      price: 420000,
-      stock: 7,
-    },
-  ],
-]);
 
 export async function generateMetadata({
   params,
 }: ProductDetailPageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const product = demoProducts.get(slug);
+  const product = await getProductBySlug(params.slug);
 
   if (!product) {
     return {
@@ -59,8 +35,7 @@ export async function generateMetadata({
 export default async function ProductDetailPage({
   params,
 }: ProductDetailPageProps) {
-  const { slug } = await params;
-  const product = demoProducts.get(slug);
+  const product = await getProductBySlug(params.slug);
 
   if (!product) {
     notFound();
@@ -77,7 +52,7 @@ export default async function ProductDetailPage({
 
       <div className="product-detail-grid">
         <div className="product-detail-visual">
-          <img src="/perfume-hero.svg" alt={product.name} />
+          <img src={product.imageUrl ?? "/perfume-hero.svg"} alt={product.name} />
         </div>
 
         <div className="product-detail-copy">

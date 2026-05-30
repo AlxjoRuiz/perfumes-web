@@ -2,39 +2,10 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Truck, MessageCircle, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProductGrid } from "@/components/product/product-grid";
+import { getActiveProducts } from "@/lib/products";
 
-const featuredProducts = [
-  {
-    name: "Sauvage Intense",
-    slug: "sauvage-intense",
-    description:
-      "Una salida fresca y especiada con fondo ambarado, pensada para dejar huella.",
-    price: 385000,
-    imageUrl: "/perfume-hero.svg",
-    stock: 12,
-    badge: "Mas pedido",
-  },
-  {
-    name: "Bleu Signature",
-    slug: "bleu-signature",
-    description:
-      "Perfil elegante y limpio con un aire versatil, ideal para uso diario o eventos.",
-    price: 420000,
-    imageUrl: "/perfume-hero.svg",
-    stock: 7,
-    badge: "Clásico",
-  },
-  {
-    name: "Velvet Rose",
-    slug: "velvet-rose",
-    description:
-      "Un floral suave con sensación cremosa y presencia sofisticada en la piel.",
-    price: 365000,
-    imageUrl: "/perfume-hero.svg",
-    stock: 0,
-    badge: "Edicion especial",
-  },
-];
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 const trustItems = [
   {
@@ -54,7 +25,10 @@ const trustItems = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const { products, source, error } = await getActiveProducts();
+  const shouldShowCatalogNote = source !== "supabase" || Boolean(error);
+
   return (
     <>
       <section className="hero">
@@ -79,7 +53,7 @@ export default function Home() {
           <div className="hero-points">
             <span>
               <CheckCircle2 size={16} />
-              Catálogo curado
+              Catalogo curado
             </span>
             <span>
               <CheckCircle2 size={16} />
@@ -93,17 +67,17 @@ export default function Home() {
         </div>
 
         <div className="hero-visual" aria-label="Imagen de perfume elegante">
-          <img src="/perfume-hero.svg" alt="Frasco de perfume elegante sobre fondo cálido" />
+          <img src="/perfume-hero.svg" alt="Frasco de perfume elegante sobre fondo calido" />
           <div className="hero-visual-card">
             <strong>Seleccion premium</strong>
-            <p>Diseño sobrio, lectura rapida y foco en conversion.</p>
+            <p>Diseno sobrio, lectura rapida y foco en conversion.</p>
           </div>
         </div>
       </section>
 
       <section className="stats-band" aria-label="Beneficios principales">
         {[
-          ["Asesoría", "Acompañamiento rapido por WhatsApp"],
+          ["Asesoria", "Acompanamiento rapido por WhatsApp"],
           ["Calidad", "Productos pensados para destacar"],
           ["Velocidad", "Landing ligera y responsive"],
         ].map(([title, text]) => (
@@ -117,13 +91,18 @@ export default function Home() {
       <section className="section" id="destacados">
         <div className="section-heading">
           <p className="eyebrow">Destacados</p>
-          <h2>Productos listos para darle forma al catálogo.</h2>
+          <h2>Productos listos para darle forma al catalogo.</h2>
           <p>
-            Estas cards ya estan preparadas para conectarse a Supabase cuando
-            pasemos a la siguiente fase.
+            La grilla ya lee Supabase y, si hace falta, muestra una version de
+            ejemplo para que la experiencia no se corte.
           </p>
+          {shouldShowCatalogNote ? (
+            <p className="section-note" role="status">
+              {error ?? "Mostrando un catalogo de ejemplo mientras cargamos los productos reales."}
+            </p>
+          ) : null}
         </div>
-        <ProductGrid items={featuredProducts} />
+        <ProductGrid items={products} />
       </section>
 
       <section className="section" id="confianza">

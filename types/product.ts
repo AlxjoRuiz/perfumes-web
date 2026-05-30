@@ -15,3 +15,15 @@ export type Product = {
 export type ProductInsert = Omit<Product, "id" | "created_at" | "updated_at">;
 
 export type ProductUpdate = Partial<ProductInsert>;
+
+export type ProductPreview = Pick<
+  Product,
+  "name" | "slug" | "description" | "price" | "stock"
+> & {
+  imageUrl: string | null;
+  badge?: string;
+};
+
+export type ProductDetail = Product & {
+  imageUrl: string | null;
+};
