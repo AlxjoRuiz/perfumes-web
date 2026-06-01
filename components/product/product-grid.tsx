@@ -3,11 +3,14 @@ import { ProductCard } from "@/components/product/product-card";
 import type { ProductPreview } from "@/types/product";
 
 type ProductGridProps = {
-  items: ProductPreview[];
+  items?: ProductPreview[];
+  products?: ProductPreview[];
 };
 
-export function ProductGrid({ items }: ProductGridProps) {
-  if (items.length === 0) {
+export function ProductGrid({ items, products }: ProductGridProps) {
+  const catalog = items ?? products ?? [];
+
+  if (catalog.length === 0) {
     return (
       <EmptyState
         title="Aun no hay productos para mostrar"
@@ -19,8 +22,8 @@ export function ProductGrid({ items }: ProductGridProps) {
   }
 
   return (
-    <div className="product-grid">
-      {items.map((product) => (
+    <div className="grid gap-8 lg:grid-cols-3">
+      {catalog.map((product) => (
         <ProductCard key={product.slug} product={product} />
       ))}
     </div>

@@ -1,0 +1,31 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="140" y1="90" x2="1080" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#20110A"/>
+      <stop offset="1" stop-color="#9A5F18"/>
+    </linearGradient>
+    <linearGradient id="stone" x1="360" y1="760" x2="820" y2="980" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D5944A"/>
+      <stop offset="1" stop-color="#7B4A18"/>
+    </linearGradient>
+    <linearGradient id="bottle" x1="420" y1="230" x2="780" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B140A"/>
+      <stop offset="0.45" stop-color="#FFB44D"/>
+      <stop offset="1" stop-color="#6B300E"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1200" rx="80" fill="url(#bg)"/>
+  <ellipse cx="600" cy="912" rx="238" ry="58" fill="#000000" fill-opacity="0.25"/>
+  <path d="M352 792L462 674H804L850 820L736 920H430L352 792Z" fill="url(#stone)"/>
+  <rect x="510" y="160" width="180" height="94" rx="18" fill="#111111"/>
+  <rect x="528" y="244" width="144" height="72" rx="16" fill="#252525"/>
+  <rect x="388" y="304" width="424" height="548" rx="92" fill="url(#bottle)" stroke="#F7D9A5" stroke-width="8"/>
+  <rect x="434" y="352" width="332" height="444" rx="74" fill="#26150C" fill-opacity="0.55"/>
+  <rect x="470" y="392" width="260" height="372" rx="60" fill="#FFB34B" fill-opacity="0.72"/>
+  <rect x="548" y="730" width="104" height="128" rx="26" fill="#B86B2E"/>
+  <rect x="520" y="826" width="160" height="70" rx="24" fill="#111111"/>
+  <rect x="472" y="456" width="256" height="248" rx="22" fill="#2D2D2D" fill-opacity="0.72"/>
+  <rect x="500" y="482" width="200" height="196" rx="14" stroke="#8A8A8A" stroke-width="8" fill="none"/>
+  <circle cx="304" cy="676" r="24" fill="#FFEDC8" fill-opacity="0.72"/>
+  <circle cx="894" cy="676" r="16" fill="#FFEDC8" fill-opacity="0.72"/>
+</svg>

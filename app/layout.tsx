@@ -27,11 +27,11 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${montserrat.variable} ${playfair.variable}`}>
       <body>
-        <div className="app-shell">
-          <Header />
-          <main className="app-main">{children}</main>
-          <Footer />
-        </div>
+        <Header />
+        <main className="mx-auto flex min-h-screen w-full max-w-[1280px] flex-col gap-0 px-0 pt-[80px]">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

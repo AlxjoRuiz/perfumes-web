@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft, MessageCircle } from "lucide-react";
@@ -10,15 +11,16 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 type ProductDetailPageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export async function generateMetadata({
   params,
 }: ProductDetailPageProps): Promise<Metadata> {
-  const product = await getProductBySlug(params.slug);
+  const { slug } = await params;
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     return {
@@ -35,7 +37,8 @@ export async function generateMetadata({
 export default async function ProductDetailPage({
   params,
 }: ProductDetailPageProps) {
-  const product = await getProductBySlug(params.slug);
+  const { slug } = await params;
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     notFound();
@@ -51,8 +54,14 @@ export default async function ProductDetailPage({
       </div>
 
       <div className="product-detail-grid">
-        <div className="product-detail-visual">
-          <img src={product.imageUrl ?? "/perfume-hero.svg"} alt={product.name} />
+        <div className="product-detail-visual relative">
+          <Image
+            src={product.imageUrl ?? "/perfume-hero.svg"}
+            alt={product.name}
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-contain"
+          />
         </div>
 
         <div className="product-detail-copy">

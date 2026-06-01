@@ -1,0 +1,27 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="70" x2="1080" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7F8FA"/>
+      <stop offset="1" stop-color="#C7D0D9"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="400" y1="300" x2="800" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="0.52" stop-color="#DCE4EA"/>
+      <stop offset="1" stop-color="#AEBCCC"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1200" rx="80" fill="url(#bg)"/>
+  <ellipse cx="600" cy="910" rx="242" ry="56" fill="#4E667A" fill-opacity="0.16"/>
+  <rect x="500" y="170" width="200" height="92" rx="16" fill="#7A8A95"/>
+  <rect x="520" y="248" width="160" height="72" rx="16" fill="#E5EDF2"/>
+  <rect x="392" y="304" width="416" height="548" rx="92" fill="url(#glass)" stroke="#FFFFFF" stroke-width="8"/>
+  <rect x="438" y="354" width="324" height="442" rx="72" fill="#FFFFFF" fill-opacity="0.56"/>
+  <rect x="502" y="388" width="196" height="380" rx="26" fill="#E8F1F7" fill-opacity="0.9"/>
+  <rect x="548" y="730" width="104" height="128" rx="26" fill="#D7E1E8"/>
+  <rect x="520" y="826" width="160" height="70" rx="24" fill="#C6D0D9"/>
+  <rect x="468" y="454" width="264" height="250" rx="18" stroke="#6D7C89" stroke-width="8" fill="none"/>
+  <circle cx="600" cy="546" r="72" fill="none" stroke="#D8E3EA" stroke-width="18"/>
+  <circle cx="600" cy="546" r="30" fill="#FFFFFF"/>
+  <circle cx="306" cy="670" r="20" fill="#FFFFFF" fill-opacity="0.76"/>
+  <circle cx="894" cy="670" r="14" fill="#FFFFFF" fill-opacity="0.76"/>
+</svg>

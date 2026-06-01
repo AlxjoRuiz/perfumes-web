@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA NOIR | Luxury Perfumerie</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#0d1c32",
+                    "tertiary-fixed-dim": "#c9c6c1",
+                    "outline-variant": "#c5c6cd",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#1c1c18",
+                    "surface": "#fcf9f8",
+                    "primary": "#000000",
+                    "surface-container-high": "#eae7e7",
+                    "on-secondary-container": "#745c00",
+                    "primary-fixed": "#d6e3ff",
+                    "background": "#fcf9f8",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#e5e2dc",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#e9c349",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#1b1c1c",
+                    "secondary-fixed": "#ffe088",
+                    "on-surface": "#1b1c1c",
+                    "on-primary-fixed-variant": "#39475f",
+                    "on-secondary-fixed-variant": "#574500",
+                    "surface-container": "#f0eded",
+                    "primary-container": "#0d1c32",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f6f3f2",
+                    "on-secondary-fixed": "#241a00",
+                    "on-surface-variant": "#44474d",
+                    "on-tertiary-container": "#85847f",
+                    "tertiary": "#000000",
+                    "surface-container-highest": "#e4e2e1",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "outline": "#75777e",
+                    "surface-bright": "#fcf9f8",
+                    "secondary-container": "#fed65b",
+                    "surface-dim": "#dcd9d9",
+                    "on-primary-container": "#76849f",
+                    "surface-tint": "#515f78",
+                    "inverse-primary": "#b9c7e4",
+                    "surface-variant": "#e4e2e1",
+                    "on-tertiary-fixed-variant": "#474743",
+                    "on-tertiary-fixed": "#1c1c18",
+                    "primary-fixed-dim": "#b9c7e4",
+                    "secondary": "#735c00",
+                    "inverse-surface": "#303030",
+                    "inverse-on-surface": "#f3f0f0",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "32px",
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "container-max": "1280px",
+                    "section-gap": "120px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "button": ["Montserrat"],
+                    "body-md": ["Montserrat"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "headline-sm": ["Playfair Display"],
+                    "label-caps": ["Montserrat"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                    "button": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .glass-nav {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(252,249,248,0) 0%, rgba(252,249,248,1) 100%);
+        }
+        .scent-line {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, #735c00 0%, transparent 100%);
+        }
+        .hairline-gold {
+            border-bottom: 0.5px solid rgba(115, 92, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container-high/80 backdrop-blur-md border-b-[0.5px] border-secondary/10 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<a class="font-headline-md text-headline-md tracking-tighter text-primary dark:text-on-primary-fixed" href="#">AURA NOIR</a>
+<div class="hidden md:flex items-center gap-6">
+<a class="font-button text-button uppercase tracking-widest text-primary dark:text-on-primary-fixed border-b border-secondary pb-1" href="#">Collections</a>
+<a class="font-button text-button uppercase tracking-widest text-on-surface-variant/70 dark:text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity duration-300" href="#">Scent Stories</a>
+<a class="font-button text-button uppercase tracking-widest text-on-surface-variant/70 dark:text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity duration-300" href="#">Bespoke</a>
+<a class="font-button text-button uppercase tracking-widest text-on-surface-variant/70 dark:text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity duration-300" href="#">Atelier</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="cursor-pointer active:scale-95 transition-transform hover:opacity-80">
+<span class="material-symbols-outlined text-primary">shopping_bag</span>
+</button>
+<button class="cursor-pointer active:scale-95 transition-transform hover:opacity-80">
+<span class="material-symbols-outlined text-primary">person</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Aura Noir Signature Bottle" class="w-full h-full object-cover grayscale-[20%]" data-alt="A macro close-up of a luxury heavy glass perfume bottle with a minimalist black label sitting on a reflective obsidian surface. The lighting is high-contrast editorial style with sharp shadows and soft ambient highlights that catch the liquid's amber glow. The background is a soft-focus architectural gray, evoking a sense of quiet luxury and mysterious sophistication. The overall atmosphere is cinematic and expensive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_r2eFvbVsqce5tqtewY3MSa4pM29MYMcv5fJ37wuSHKbgofIxrl6_jKnRMD7xsAqk28ZbD0KZtB5wE6ao_Ue4qLxTtOTeuhoaCJ_VT12ryHBWfd5Ju3_EIjd_IS92HzinVawZAQz3BxCmC6gdXdYoSR5oNMLBGkmb4lD1kdF9izsM5zPUB35pbbu385W1qx95uJIiQsMccDC9ashhwUJuZmTkxRjhvlsMFNea87MVO087jg60dy_7cKaGACtLlvCKgAtuJ7HHDis"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-gutter w-full grid grid-cols-12">
+<div class="col-span-12 md:col-span-6 lg:col-span-5 flex flex-col items-start gap-8">
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim uppercase tracking-[0.3em]">The Essence of Midnight</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary leading-tight">Ephemeral Echoes of the Noir</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">Discover an olfactory journey through shadowed gardens and rare botanical treasures. A collection crafted for the silent observer.</p>
+<a class="group relative px-10 py-5 bg-primary text-on-primary font-button text-button uppercase overflow-hidden transition-all duration-500 hover:bg-on-primary-fixed" href="#collections">
+<span class="relative z-10">Discover the Collection</span>
+<div class="absolute bottom-0 left-0 w-0 h-[2px] bg-secondary-fixed transition-all duration-500 group-hover:w-full"></div>
+</a>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+<span class="font-label-caps text-[10px] tracking-widest text-secondary opacity-60">SCROLL</span>
+<div class="scent-line"></div>
+</div>
+</section>
+<!-- The Art of Scent (Heritage) Section -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 relative order-2 md:order-1">
+<div class="aspect-[4/5] w-full overflow-hidden">
+<img alt="Botanical Ingredients" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" data-alt="An artistic flat lay of raw perfume ingredients including dried bergamot slices, dark sandalwood blocks, and delicate white jasmine flowers on a textured linen surface. The scene is shot in a bright, minimalist studio with soft, diffused natural light that emphasizes the natural textures. The color palette is composed of warm creams, earthy browns, and pristine whites, creating an atmosphere of organic craftsmanship and heritage luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaBEeFpQweJYHoFk8iFWKyh8LD_AKqbq9F3qFaPBF1WrowDOarHwcQrqnK2-ZcUu5Fx0kdbWf7lpXpJA0dp2iAkNoJAsUtRDDr_ksAblm07dSUCNxPB4arCtxWpByeYoWhh1_cTftHCI7yET-iAMXq6IE-eIy8xUlDcQ01SpYjboRwyHWIStg0KnSp8GezU9wlc9sZcNb-veR1_R126wbH77PwH5sRytcXSD4AbumZSVKCne2HPMlhPmG0_EvGNx0ZziyP6EPeko0"/>
+</div>
+<div class="absolute -bottom-10 -right-10 hidden lg:block w-64 aspect-square bg-surface-container border-[0.5px] border-secondary/20 p-8 flex flex-col justify-center">
+<span class="font-headline-sm text-headline-sm text-primary mb-2 italic">Est. 1924</span>
+<p class="font-label-caps text-[10px] text-on-surface-variant">Century of excellence in Grasse, France.</p>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col gap-8 order-1 md:order-2 md:pl-12">
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim">HERITAGE</span>
+<h2 class="font-headline-md text-headline-md text-primary">The Art of Invisible Sculpting</h2>
+<div class="h-[1px] w-20 bg-secondary"></div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    At AURA NOIR, we view fragrance as an architectural form. Our heritage is rooted in the precision of the master alchemist and the soul of the avant-garde artist. Each scent is a narrative composed of the world's most elusive molecules.
+                </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Sourced from our private estates in Grasse and the untamed peaks of the Himalayas, our ingredients represent the pinnacle of global biodiversity.
+                </p>
+<button class="flex items-center gap-4 group font-button text-button uppercase text-primary">
+                    Our Story
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Featured Creations Section -->
+<section class="py-section-gap bg-surface-container-low" id="collections">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim">CURATED</span>
+<h2 class="font-headline-md text-headline-md text-primary">Featured Creations</h2>
+</div>
+<a class="font-button text-button uppercase text-on-surface-variant hover:text-primary underline underline-offset-8 transition-colors" href="#">View All Parcels</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Product 1 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] bg-surface">
+<img alt="Nocturnal Bloom" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A single tall, slender perfume bottle with a heavy matte black cap centered in a minimalist white space. Subtle smoke-like vapor swirls elegantly around the base of the bottle. The lighting is soft and directional, creating a long, diffused shadow. The bottle label is clean and typographic, featuring the name 'Nocturnal Bloom' in an elegant serif font. The image feels airy, sophisticated, and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXHOFMUoer1pxHgzGrR12JWmwYR5pueK_xAxvAbi2_V8XD-Hd601WOehquBJEkosm8H80fcH8BMc_WJLeqdcrOvmKC3lvIEPH6nk0oKT0Xz6UmgTbERmCCJxAcqyQRRw_yF7i-l31KGyQmXTmY_jQjnKq07PjXz6SpeUuXwepFc8JEW_8xmgdYer2NU_Anv08suWnwwQFi2LE7DRK-AQ0dU5nAdu1NTXwantXcLbfF9332tE5kDqoX8KuNiW7-d2cq6LJRXkit7Mk"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-surface px-6 py-3 font-button text-[12px] uppercase tracking-widest shadow-xl">Quick Look</button>
+</div>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-label-caps text-[10px] text-secondary mb-2">EAU DE PARFUM</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1 group-hover:text-secondary transition-colors">Nocturnal Bloom</h3>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-60 mb-3">Tuberose, Black Pepper, Vetiver</p>
+<p class="font-button text-button text-primary">€185.00</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] bg-surface">
+<img alt="Solaris Oud" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A luxury square perfume bottle with a golden liquid inside, reflecting warm sunlight. The bottle is placed on a rough, sun-drenched sandstone block with a backdrop of a deep blue Mediterranean sky. The scene is high-contrast and evokes a feeling of warmth, gold, and desert luxury. The overall aesthetic is clean and premium, focusing on the materiality of glass, metal, and stone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy-IO8GJmqOxHRDmzf4vdKa-ucqcYoy9VFlpTMEsZvbz_mSZhwkE67CqOm1-C_kgXCa6b--NxZ7-fwD-IL3q6St9O5THnrhC_1mjo_SCDHrUZ7WySJdZdeOj8TZ_j8NNjtapIKnWdlVdtTM-SxmU09aIPF9Bv-n27dWRunTlvbYA_ve5X0rL9TF3GZZtARx21NT43AULdctty74Wof1o5M2A_g8n7RVmsKJsoYOJQcDMTAw9r-1pjZjwKYtwFSQn1LkkmQV-twOCo"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-surface px-6 py-3 font-button text-[12px] uppercase tracking-widest shadow-xl">Quick Look</button>
+</div>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-label-caps text-[10px] text-secondary mb-2">EXTRAIT DE PARFUM</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1 group-hover:text-secondary transition-colors">Solaris Oud</h3>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-60 mb-3">Saffron, Rare Oud, Bergamot</p>
+<p class="font-button text-button text-primary">€260.00</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] bg-surface">
+<img alt="Silver Rain" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist frosted glass perfume bottle standing on a polished marble surface. Soft, cool blue morning light streams in from a side window, creating elongated reflections. Tiny water droplets cling to the bottle's surface, suggesting freshness. The background is a clean, out-of-focus modern interior with muted gray and white tones. The mood is calm, refreshing, and highly refined." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs-UwD8FmiKQtXD_syQ3N39oQoIC-vYYuQdf07Ah1hrbxPzR2OKjXWw8we9ewDoZcV_rj0FHsSujjZm-YBW_xGeYI5o4NTMrOikuCyybnEpgX-7xhDgZ8-2gO8Gz8g4s8tlLsvho-9yfN8Y5tkIO_8tsr1T3tyNtYShgg5-1EDsymKU2fwZ3jDz4PMTMxmBPLECIRlILcjtHQRVTF-aOXy36_6uPc42GAadYpfp0JXfLLyoQe56xEZH_iTCIGFeJevTxXvqZ7oXHk"/>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-surface px-6 py-3 font-button text-[12px] uppercase tracking-widest shadow-xl">Quick Look</button>
+</div>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-label-caps text-[10px] text-secondary mb-2">EAU DE PARFUM</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-1 group-hover:text-secondary transition-colors">Silver Rain</h3>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-60 mb-3">Cold Mint, Iris, White Musk</p>
+<p class="font-button text-button text-primary">€165.00</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Scent Note Accordion Concept (Bento Style) -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-surface p-12 border-[0.5px] border-secondary/10 flex flex-col justify-between aspect-square md:aspect-auto">
+<div>
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim mb-8 block">THE ATELIER EXPERIENCE</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md text-primary mb-6">Create Your Bespoke Identity</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-12">Consult with our master perfumers to design a signature scent that resonates with your unique soul architecture.</p>
+</div>
+<button class="w-fit px-8 py-4 border border-primary font-button text-button uppercase hover:bg-primary hover:text-on-primary transition-all">Book Consultation</button>
+</div>
+<div class="grid grid-cols-1 gap-gutter">
+<div class="bg-surface-container p-8 hairline-gold flex justify-between items-center group cursor-pointer">
+<div class="flex gap-6 items-center">
+<span class="font-display-lg opacity-10 text-primary group-hover:opacity-100 transition-opacity">01</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm">Top Notes</h4>
+<p class="text-[12px] text-on-surface-variant">The initial sensory awakening</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary">add</span>
+</div>
+<div class="bg-surface-container p-8 hairline-gold flex justify-between items-center group cursor-pointer">
+<div class="flex gap-6 items-center">
+<span class="font-display-lg opacity-10 text-primary group-hover:opacity-100 transition-opacity">02</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm">Heart Notes</h4>
+<p class="text-[12px] text-on-surface-variant">The character and core narrative</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary">add</span>
+</div>
+<div class="bg-surface-container p-8 hairline-gold flex justify-between items-center group cursor-pointer">
+<div class="flex gap-6 items-center">
+<span class="font-display-lg opacity-10 text-primary group-hover:opacity-100 transition-opacity">03</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm">Base Notes</h4>
+<p class="text-[12px] text-on-surface-variant">The lasting, mysterious memory</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary">add</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-tertiary-container dark:bg-surface-container-lowest w-full py-section-gap border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col gap-6">
+<span class="font-headline-sm text-headline-sm text-tertiary-fixed">AURA NOIR</span>
+<p class="font-body-md text-tertiary-fixed-dim/60">Crafting olfactory poetry since 1924. Located in the heart of Paris, shipping worldwide.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-tertiary-fixed cursor-pointer hover:text-secondary-fixed-dim transition-colors">public</span>
+<span class="material-symbols-outlined text-tertiary-fixed cursor-pointer hover:text-secondary-fixed-dim transition-colors">camera</span>
+<span class="material-symbols-outlined text-tertiary-fixed cursor-pointer hover:text-secondary-fixed-dim transition-colors">mail</span>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim/40 uppercase">Boutique</span>
+<ul class="flex flex-col gap-3">
+<li><a class="font-body-md text-tertiary-fixed-dim/60 hover:text-tertiary-fixed transition-colors hover:underline decoration-secondary/30 underline-offset-4" href="#">Collections</a></li>
+<li><a class="font-body-md text-tertiary-fixed-dim/60 hover:text-tertiary-fixed transition-colors hover:underline decoration-secondary/30 underline-offset-4" href="#">Gift Sets</a></li>
+<li><a class="font-body-md text-tertiary-fixed-dim/60 hover:text-tertiary-fixed transition-colors hover:underline decoration-secondary/30 underline-offset-4" href="#">Home Fragrance</a></li>
+<li><a class="font-body-md text-tertiary-fixed-dim/60 hover:text-tertiary-fixed transition-colors hover:underline decoration-secondary/30 underline-offset-4" href="#">Sample Program</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim/40 uppercase">Information</span>
+<ul class="flex flex-col gap-3">
+<li><a class="font-body-md text-tertiary-fixed-dim/60 hover:text-tertiary-fixed transition-colors hover:underline decoration-secondary/30 underline-offset-4" href="#">Sustainability</a></li>
+<li><a class="font-body-md text-tertiary-fixed-dim/60 hover:text-tertiary-fixed transition-colors hover:underline decoration-secondary/30 underline-offset-4" href="#">Shipping &amp; Returns</a></li>
+<li><a class="font-body-md text-tertiary-fixed-dim/60 hover:text-tertiary-fixed transition-colors hover:underline decoration-secondary/30 underline-offset-4" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-tertiary-fixed-dim/60 hover:text-tertiary-fixed transition-colors hover:underline decoration-secondary/30 underline-offset-4" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-6">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim/40 uppercase">Newsletter</span>
+<p class="font-body-md text-tertiary-fixed-dim/60">Subscribe to receive exclusive invitations and scent releases.</p>
+<div class="relative">
+<input class="w-full bg-transparent border-b border-tertiary-fixed-dim/30 py-3 text-tertiary-fixed focus:outline-none focus:border-secondary transition-colors font-button text-button" placeholder="YOUR EMAIL" type="email"/>
+<button class="absolute right-0 bottom-3 text-tertiary-fixed hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-20 pt-8 border-t border-tertiary-fixed-dim/10">
+<p class="font-label-caps text-[10px] text-tertiary-fixed-dim/40 tracking-[0.2em]">© 2024 AURA NOIR PARFUMERIE. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<script>
+        // Micro-interactions for smooth scrolling and header transparency
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        // Simple reveal animation observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+        
+        // Initial state for hero to be visible
+        setTimeout(() => {
+            const hero = document.querySelector('section');
+            hero.classList.remove('opacity-0', 'translate-y-10');
+            hero.classList.add('opacity-100');
+        }, 100);
+    </script>
+</body></html>
