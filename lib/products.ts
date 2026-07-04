@@ -19,6 +19,7 @@ const fallbackProducts: ProductDetail[] = [
       "Ideal para quien busca presencia, proyeccion y un estilo moderno que funcione en cualquier momento del dia.",
     price: 385000,
     image_url: "/perfume-nocturnal-bloom.svg",
+    imageUrl: "/perfume-nocturnal-bloom.svg",
     stock: 12,
     is_active: true,
     created_at: "2026-05-01T00:00:00.000Z",
@@ -34,6 +35,7 @@ const fallbackProducts: ProductDetail[] = [
       "Su equilibrio entre frescura y elegancia lo convierte en una fragancia facil de llevar y muy comercial.",
     price: 420000,
     image_url: "/perfume-solaris-oud.svg",
+    imageUrl: "/perfume-solaris-oud.svg",
     stock: 7,
     is_active: true,
     created_at: "2026-05-02T00:00:00.000Z",
@@ -49,6 +51,7 @@ const fallbackProducts: ProductDetail[] = [
       "Pensado para quienes buscan una firma olfativa mas delicada, con un acabado femenino y memorable.",
     price: 365000,
     image_url: "/perfume-silver-rain.svg",
+    imageUrl: "/perfume-silver-rain.svg",
     stock: 0,
     is_active: true,
     created_at: "2026-05-03T00:00:00.000Z",
@@ -181,4 +184,23 @@ export async function getProductBySlug(
   }
 
   return toDetail(data[0]);
+}
+
+export async function getAllProducts(): Promise<Product[]> {
+  const query = new URLSearchParams({
+    select: "*",
+    order: "created_at.desc",
+  }).toString();
+
+  const { data, error } = await fetchSupabaseProducts(query);
+
+  if (error === "missing-config") {
+    return fallbackProducts;
+  }
+
+  if (error) {
+    return fallbackProducts;
+  }
+
+  return data ?? [];
 }

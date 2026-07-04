@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { CartProvider } from "@/components/cart/CartProvider";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -17,6 +18,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Aromas con presencia",
   description: "Tienda web de perfumes con landing comercial, carrito y checkout por WhatsApp.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
 };
 
 export default function RootLayout({
@@ -27,11 +29,13 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${montserrat.variable} ${playfair.variable}`}>
       <body>
-        <Header />
-        <main className="mx-auto flex min-h-screen w-full max-w-[1280px] flex-col gap-0 px-0 pt-[80px]">
-          {children}
-        </main>
-        <Footer />
+        <CartProvider>
+          <Header />
+          <main className="mx-auto flex min-h-screen w-full max-w-[1280px] flex-col gap-0 px-0 pt-[80px]">
+            {children}
+          </main>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

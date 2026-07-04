@@ -1,14 +1,14 @@
-import { createClient } from "@supabase/supabase-js";
+import { createBrowserClient as createAuthBrowserClient } from "@supabase/auth-helpers-react";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+export function createBrowserSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-if (!supabaseUrl) {
-  throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL environment variable.");
+  if (!supabaseUrl || !supabaseAnonKey) {
+    throw new Error("Missing public Supabase environment variables.");
+  }
+
+  return createAuthBrowserClient(supabaseUrl, supabaseAnonKey, {
+    isSingleton: true,
+  });
 }
-
-if (!supabaseAnonKey) {
-  throw new Error("Missing NEXT_PUBLIC_SUPABASE_ANON_KEY environment variable.");
-}
-
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);

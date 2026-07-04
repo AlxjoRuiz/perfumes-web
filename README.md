@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Perfumes Web
 
-## Getting Started
+Tienda online de perfumes con catálogo, carrito, checkout por WhatsApp y panel de administración.
 
-First, run the development server:
+## Requisitos
+
+- Node.js 24
+- npm o pnpm
+- Cuenta de Supabase con proyecto creado
+- Variables de entorno configuradas
+
+## Variables de entorno
+
+Copia [.env.example](.env.example) a `.env.local` y completa:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_SUPABASE_URL=tu-url-de-supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY=tu-anon-key
+NEXT_PUBLIC_WHATSAPP_PHONE=573001112233
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+SUPABASE_PRODUCT_IMAGES_BUCKET=product-images
+SUPABASE_SERVICE_ROLE_KEY=tu-service-role-key
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Desarrollo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+nvm use
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Abre http://localhost:3000.
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- `npm run dev`: inicia el servidor de desarrollo.
+- `npm run build`: genera la build de producción.
+- `npm run start`: ejecuta la app compilada.
+- `npm run lint`: valida el proyecto con ESLint.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Admin y Supabase
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- El panel de administración está protegido por acceso con correo autorizado.
+- La tabla `profiles` define los usuarios con rol `admin`.
+- El bucket `product-images` debe estar público para que las imágenes se muestren correctamente.
+- Si quieres mayor seguridad, añade más correos a la lista de autorización en [components/admin/admin-allowlist.ts](components/admin/admin-allowlist.ts).
 
-## Deploy on Vercel
+## Despliegue en Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Conecta el repositorio a Vercel.
+2. Define las mismas variables de entorno en Vercel.
+3. Asegúrate de que el bucket de Supabase y las políticas RLS estén configuradas.
+4. Despliega la app.

@@ -6,6 +6,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Price } from "@/components/ui/price";
 import { getProductBySlug } from "@/lib/products";
+import { buildProductWhatsAppUrl } from "@/lib/whatsapp";
+import { AddToCartButton } from "@/components/cart/AddToCartButton";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -74,11 +76,19 @@ export default async function ProductDetailPage({
             <span>{product.stock} unidades disponibles</span>
           </div>
           <div className="hero-actions">
-            <Button href="https://wa.me/573000000000" variant="ghost">
-              <MessageCircle size={16} />
-              Comprar por WhatsApp
-            </Button>
-            <Button href="/carrito">Agregar al carrito</Button>
+            <Button href={buildProductWhatsAppUrl(product)} variant="ghost">
+            <MessageCircle size={16} />
+            Comprar por WhatsApp
+          </Button>
+            <AddToCartButton
+              product={{
+                slug: product.slug,
+                name: product.name,
+                price: Number(product.price),
+                imageUrl: product.imageUrl,
+                stock: Number(product.stock),
+              }}
+            />
           </div>
         </div>
       </div>

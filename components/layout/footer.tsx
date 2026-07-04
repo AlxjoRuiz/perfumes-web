@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE ?? "573000000000";
 
 export function Footer() {
@@ -27,17 +29,17 @@ export function Footer() {
         <div className="flex flex-col gap-3">
           <span className="font-body text-[10px] font-semibold uppercase tracking-[0.22em] text-[#e5e2dc66]">Boutique</span>
           <ul className="m-0 flex list-none flex-col gap-2 p-0">
-            <li><a href="/#collections" className="text-[11px] text-[#e5e2dccc] no-underline hover:text-white">Collections</a></li>
-            <li><a href="/admin" className="text-[11px] text-[#e5e2dccc] no-underline hover:text-white">Gift Sets</a></li>
-            <li><a href="/#atelier" className="text-[11px] text-[#e5e2dccc] no-underline hover:text-white">Home Fragrance</a></li>
+            <li><Link href="/#collections" className="text-[11px] text-[#e5e2dccc] no-underline hover:text-white">Collections</Link></li>
+            <li><Link href="/admin" className="text-[11px] text-[#e5e2dccc] no-underline hover:text-white">Gift Sets</Link></li>
+            <li><Link href="/#atelier" className="text-[11px] text-[#e5e2dccc] no-underline hover:text-white">Home Fragrance</Link></li>
           </ul>
         </div>
 
         <div className="flex flex-col gap-3">
           <span className="font-body text-[10px] font-semibold uppercase tracking-[0.22em] text-[#e5e2dc66]">Information</span>
           <ul className="m-0 flex list-none flex-col gap-2 p-0">
-            <li><a href="/#scent-stories" className="text-[11px] text-[#e5e2dccc] no-underline hover:text-white">Sustainability</a></li>
-            <li><a href="/carrito" className="text-[11px] text-[#e5e2dccc] no-underline hover:text-white">Shipping & Returns</a></li>
+            <li><Link href="/#scent-stories" className="text-[11px] text-[#e5e2dccc] no-underline hover:text-white">Sustainability</Link></li>
+            <li><Link href="/carrito" className="text-[11px] text-[#e5e2dccc] no-underline hover:text-white">Shipping & Returns</Link></li>
             <li><a href="mailto:hola@perfumes.com" className="text-[11px] text-[#e5e2dccc] no-underline hover:text-white">Contact Us</a></li>
           </ul>
         </div>

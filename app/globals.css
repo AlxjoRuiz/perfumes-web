@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   /* AURA NOIR Color Palette */
   /* Primary */
@@ -116,6 +120,7 @@ img {
   display: block;
   max-width: 100%;
 }
+
 
 .app-shell {
   min-height: 100vh;

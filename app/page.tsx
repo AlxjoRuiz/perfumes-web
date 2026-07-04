@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
 import { ProductGrid } from "@/components/product/product-grid";
 import { Button } from "@/components/ui/button";
 import { getActiveProducts } from "@/lib/products";
@@ -20,140 +20,143 @@ export default async function Home() {
 
   return (
     <>
-      <section className="grid min-h-[calc(100vh-80px)] grid-cols-1 overflow-hidden lg:grid-cols-[minmax(320px,0.33fr)_minmax(0,0.67fr)]">
-        <div className="order-2 flex items-center px-4 py-12 lg:order-1 lg:px-10 xl:px-12">
-          <div className="max-w-[300px]">
-            <span className="mb-4 block font-body text-[9px] font-semibold uppercase tracking-[0.4em] text-[#d2a03d]">
+      <section className="relative flex min-h-[calc(100vh-80px)] items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/perfume-solaris-oud.svg"
+            alt="Aura Noir Signature Bottle"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#fcf9f8] via-[#fcf9f8]/30 to-transparent" />
+        </div>
+
+        <div className="relative z-10 mx-auto grid w-full max-w-[1280px] grid-cols-1 px-6 py-20 lg:grid-cols-12 lg:px-8">
+          <div className="max-w-[460px] lg:col-span-5 lg:pt-8">
+            <span className="mb-8 block font-body text-[10px] font-semibold uppercase tracking-[0.32em] text-[#d2a03d]">
               The Essence of Midnight
             </span>
 
-            <h1 className="m-0 font-display text-[clamp(2.7rem,4vw,4.6rem)] font-semibold leading-[0.88] tracking-[-0.065em] text-black">
+            <h1 className="m-0 max-w-[11ch] font-display text-[clamp(3.25rem,7vw,6rem)] font-bold leading-[0.92] tracking-[-0.055em] text-black">
               Ephemeral Echoes of the Noir
             </h1>
 
-            <p className="mt-5 max-w-[280px] text-[12px] leading-6 text-[#6a6764]">
+            <p className="mt-8 max-w-[29ch] text-[13px] leading-7 text-[#6a6764]">
               Discover an olfactory journey through shadowed gardens and rare botanical treasures. A collection crafted for the silent observer.
             </p>
 
-            <Button href="#collections" className="mt-6 !rounded-none !px-6 !py-3 !text-[10px] !tracking-[0.24em]">
+            <Button href="#collections" className="mt-6 !rounded-none !px-7 !py-4 !text-[10px] !tracking-[0.26em]">
               Discover the Collection
             </Button>
           </div>
         </div>
-
-        <div className="relative order-1 min-h-[540px] overflow-hidden bg-[#eef0ef] lg:order-2 lg:min-h-[calc(100vh-80px)]">
-          <Image
-            src="/perfume-hero.svg"
-            alt="Aura Noir Signature Bottle"
-            fill
-            priority
-            className="object-cover object-[center_45%]"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(252,249,248,0.98)_0%,rgba(252,249,248,0.56)_20%,rgba(252,249,248,0.12)_40%,rgba(27,28,28,0.16)_100%)]" />
-        </div>
       </section>
 
-      <section id="scent-stories" className="mx-auto max-w-[1280px] px-8 py-[112px]">
-        <div className="grid items-center grid-cols-12 gap-10">
-          <div className="order-1 col-span-7">
+      <section id="scent-stories" className="mx-auto max-w-[1280px] px-6 py-[112px] lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-10">
+          <div className="relative order-2 lg:order-1 lg:col-span-7">
             <div className="relative aspect-[4/5] w-full overflow-hidden">
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaBEeFpQweJYHoFk8iFWKyh8LD_AKqbq9F3qFaPBF1WrowDOarHwcQrqnK2-ZcUu5Fx0kdbWf7lpXpJA0dp2iAkNoJAsUtRDDr_ksAblm07dSUCNxPB4arCtxWpByeYoWhh1_cTftHCI7yET-iAMXq6IE-eIy8xUlDcQ01SpYjboRwyHWIStg0KnSp8GezU9wlc9sZcNb-veR1_R126wbH77PwH5sRytcXSD4AbumZSVKCne2HPMlhPmG0_EvGNx0ZziyP6EPeko0"
+                src="/perfume-nocturnal-bloom.svg"
                 alt="Botanical Ingredients"
                 fill
                 sizes="(max-width: 1024px) 100vw, 58vw"
-                className="object-cover transition-transform duration-1000"
+                className="object-cover transition-transform duration-1000 hover:scale-105"
               />
+            </div>
+            <div className="absolute -bottom-10 -right-6 hidden w-64 border border-[#c5c6cd] bg-[#fcf9f8] p-8 lg:block">
+              <span className="mb-2 block font-display text-[22px] italic text-black">Est. 1924</span>
+              <p className="m-0 text-[10px] uppercase tracking-[0.18em] text-[#44474d]">
+                Century of excellence in Grasse, France.
+              </p>
             </div>
           </div>
 
-          <div className="col-span-5 order-0 flex flex-col gap-7 pl-12">
-            <span className="font-body text-xs font-semibold uppercase tracking-[0.15em] text-[#e9c349]">
+          <div className="order-1 flex flex-col gap-7 lg:order-2 lg:col-span-5 lg:pl-12">
+            <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-[#e9c349]">
               Heritage
             </span>
 
-            <h2 className="m-0 font-display text-[32px] font-semibold leading-[1.3] tracking-[-0.02em] text-black">
+            <h2 className="m-0 max-w-[11ch] font-display text-[clamp(2rem,3vw,3rem)] font-semibold leading-[1.25] tracking-[-0.02em] text-black">
               The Art of Invisible Sculpting
             </h2>
 
             <div className="h-px w-20 bg-[#735c00]" />
 
-            <p className="m-0 text-base leading-[1.6] text-[#44474d]">
-              At AURA NOIR, we view fragrance as an architectural form. Our heritage is rooted in the precision of the master alchemist and the soul of the avant-garde artist. Each scent is a narrative composed of the world's most elusive molecules.
+            <p className="m-0 max-w-[36ch] text-base leading-[1.75] text-[#44474d]">
+              At AURA NOIR, we view fragrance as an architectural form. Our heritage is rooted in the precision of the master alchemist and the soul of the avant-garde artist.
             </p>
 
-            <p className="m-0 text-base leading-[1.6] text-[#44474d]">
+            <p className="m-0 max-w-[36ch] text-base leading-[1.75] text-[#44474d]">
               Sourced from our private estates in Grasse and the untamed peaks of the Himalayas, our ingredients represent the pinnacle of global biodiversity.
             </p>
 
-            <Button href="/admin" variant="ghost" className="story-link">
+            <Button href="/admin" variant="ghost" className="w-fit !px-0 !py-0 !text-[11px] !tracking-[0.18em]">
               Our Story
-              <ArrowRight size={20} />
+              <ArrowRight size={18} />
             </Button>
           </div>
         </div>
       </section>
 
-      <section id="collections" className="w-full bg-[#f6f3f2] py-[108px]">
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
-          <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
-            <div className="flex flex-col gap-3">
-              <span className="font-body text-[10px] font-semibold uppercase tracking-[0.22em] text-[#e9c349]">
+      <section id="collections" className="bg-[#f6f3f2] py-[112px]">
+        <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
+          <div className="mb-20 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <div className="flex flex-col gap-4">
+              <span className="font-body text-[10px] font-semibold uppercase tracking-[0.24em] text-[#e9c349]">
                 Curated
               </span>
-              <h2 className="m-0 font-display text-[31px] font-semibold tracking-[-0.02em] text-black">
+              <h2 className="m-0 font-display text-[clamp(1.9rem,2.7vw,2.8rem)] font-semibold tracking-[-0.02em] text-black">
                 Featured Creations
               </h2>
             </div>
             <Link
               href="/admin"
-              className="cursor-pointer font-body text-sm font-medium uppercase tracking-[0.1em] text-[#44474d] underline decoration-inherit decoration-offset-8 transition-colors duration-300"
+              className="font-body text-sm font-medium uppercase tracking-[0.12em] text-[#44474d] underline decoration-inherit decoration-offset-8 transition-colors duration-300 hover:text-black"
             >
               View All Parcels
             </Link>
           </div>
 
-          <div className="mt-1">
-            <ProductGrid products={products} />
-          </div>
+          <ProductGrid products={products} />
         </div>
       </section>
 
-      <section id="atelier" className="mx-auto max-w-[1280px] px-4 py-[104px] sm:px-6 lg:px-8">
+      <section id="atelier" className="mx-auto max-w-[1280px] px-6 py-[112px] lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          <div className="flex min-h-[400px] flex-col justify-between border border-[#c5c6cd] bg-[#fcf9f8] p-12">
+          <div className="flex min-h-[400px] flex-col justify-between border border-[#e5ddd2] bg-[#fcf9f8] p-12">
             <div>
               <span className="mb-8 block font-body text-xs font-semibold uppercase tracking-[0.18em] text-[#e9c349]">
                 The Atelier Experience
               </span>
 
-              <h2 className="m-0 mb-6 font-display text-[31px] font-semibold tracking-[-0.02em] text-black">
+              <h2 className="m-0 mb-6 max-w-[12ch] font-display text-[clamp(2rem,3vw,2.6rem)] font-semibold tracking-[-0.02em] text-black">
                 Create Your Bespoke Identity
               </h2>
 
-              <p className="mb-12 text-[15px] leading-[1.65] text-[#44474d]">
+              <p className="mb-12 max-w-[34ch] text-[15px] leading-[1.75] text-[#44474d]">
                 Consult with our master perfumers to design a signature scent that resonates with your unique soul architecture.
               </p>
             </div>
 
-            <Button href="/admin" variant="ghost" className="atelier-cta">
+            <Button href="/admin" variant="ghost" className="w-fit">
               Book Consultation
             </Button>
           </div>
 
-          {/* Right - Accordions */}
-          <div className="grid grid-cols-1 gap-8">
+          <div className="grid grid-cols-1 gap-4">
             {scentNotes.map((note) => (
               <div
                 key={note.number}
-                className="flex cursor-pointer items-center justify-between border-b border-[#735c0033] bg-[#f0eded] p-8 transition-all duration-300"
+                className="flex cursor-pointer items-center justify-between border-b border-[#735c0033] bg-[#f0eded] px-8 py-7 transition-all duration-300 hover:bg-[#ece8e4]"
               >
                 <div className="flex items-center gap-6">
                   <span className="font-display text-[64px] font-bold text-black opacity-10">
                     {note.number}
                   </span>
                   <div>
-                    <h4 className="m-0 mb-1 font-display text-2xl font-medium">
+                    <h4 className="m-0 mb-1 font-display text-2xl font-medium text-black">
                       {note.title}
                     </h4>
                     <p className="m-0 text-xs text-[#44474d]">
@@ -161,9 +164,7 @@ export default async function Home() {
                     </p>
                   </div>
                 </div>
-                <span className="text-2xl text-[#735c00]">
-                  +
-                </span>
+                <Plus size={22} className="text-[#735c00]" />
               </div>
             ))}
           </div>
@@ -171,7 +172,7 @@ export default async function Home() {
       </section>
 
       {shouldShowCatalogNote && (
-        <div className="mx-auto max-w-[1280px] p-8">
+        <div className="mx-auto max-w-[1280px] px-6 pb-8 lg:px-8">
           <p className="m-0 border border-[#735c0033] px-[14px] py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[#735c00]">
             {error ?? "Loading example catalog..."}
           </p>

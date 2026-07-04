@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ShoppingBag, User } from "lucide-react";
+import { User } from "lucide-react";
+import { CartCount } from "@/components/cart/CartCount";
 
 const navItems = [
   { href: "#collections", label: "Collections" },
@@ -9,20 +10,20 @@ const navItems = [
 
 export function Header() {
   return (
-    <header className="fixed left-1/2 top-0 z-50 w-full max-w-[1280px] -translate-x-1/2 border-b border-[#e5ddd233] bg-[#fcf9f8]/95 px-6 py-4 backdrop-blur-[10px]">
-      <div className="flex items-center justify-between gap-6">
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-[#e5ddd233] bg-[#fcf9f8]/90 backdrop-blur-md">
+      <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between gap-6 px-6 lg:px-8">
         <div className="shrink-0">
-          <p className="m-0 font-display text-[1.6rem] font-medium leading-none tracking-[-0.02em] text-black">
+          <p className="m-0 font-display text-[1.1rem] font-medium leading-none tracking-[-0.02em] text-black md:text-[1.6rem]">
             AURA NOIR
           </p>
         </div>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Main Navigation">
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Main Navigation">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="font-body text-[0.8rem] uppercase tracking-[0.18em] text-[#7d7b78] transition-colors duration-200 hover:text-black"
+              className="border-b border-transparent pb-1 font-body text-[0.8rem] uppercase tracking-[0.18em] text-[#7d7b78] transition-colors duration-200 hover:border-[#735c00] hover:text-black"
             >
               {item.label}
             </Link>
@@ -30,11 +31,9 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Link href="/carrito" aria-label="Carrito">
-            <ShoppingBag size={18} className="text-black" />
-          </Link>
-          <Link href="/admin" aria-label="Admin">
-            <User size={18} className="text-black" />
+          <CartCount />
+          <Link href="/admin" aria-label="Admin" className="inline-flex items-center text-black">
+            <User size={18} />
           </Link>
         </div>
       </div>
