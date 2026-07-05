@@ -22,7 +22,7 @@ export function ProductGrid({ items, products }: ProductGridProps) {
   }
 
   return (
-    <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
+    <div className="grid gap-y-16 gap-x-8 md:grid-cols-2 xl:grid-cols-3">
       {catalog.map((product) => (
         <ProductCard key={product.slug} product={product} />
       ))}
