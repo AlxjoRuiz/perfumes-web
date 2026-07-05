@@ -62,8 +62,8 @@ export default async function ProductDetailPage({
         Volver al inicio
       </Link>
 
-      <section className="grid gap-8 overflow-hidden border border-[#e5ddd2] bg-[#fcf9f8] shadow-[0_18px_35px_rgba(81,95,120,0.08)] lg:grid-cols-12">
-        <div className="relative min-h-[420px] overflow-hidden bg-[#f6f3f2] lg:col-span-5 lg:min-h-[760px]">
+      <section className="grid gap-8 overflow-hidden lg:grid-cols-12">
+        <div className="relative min-h-[420px] overflow-hidden bg-[#f6f3f2] lg:col-span-7 lg:min-h-[760px]">
           <Image
             src={product.imageUrl ?? "/perfume-hero.svg"}
             alt={product.name}
@@ -71,14 +71,14 @@ export default async function ProductDetailPage({
             sizes="(max-width: 1024px) 100vw, 42vw"
             className="object-contain p-6 sm:p-10"
           />
-          <div className="absolute left-6 top-6 border border-[#e5ddd2] bg-[#fcf9f8]/95 px-4 py-3 backdrop-blur-sm">
+          <div className="absolute bottom-6 left-6 border border-[#e5ddd2] bg-[#fcf9f8]/95 px-4 py-3 backdrop-blur-sm">
             <span className="block text-[10px] font-semibold uppercase tracking-[0.24em] text-[#735c00]">
-              Extrait de Parfum
+              Edition No. 04
             </span>
           </div>
         </div>
 
-        <div className="flex flex-col justify-between gap-10 p-6 sm:p-8 lg:col-span-7 lg:p-12">
+        <div className="flex flex-col justify-between gap-10 p-6 sm:p-8 lg:col-span-5 lg:py-6 lg:pr-0">
           <div className="space-y-6">
             <span className="block font-body text-[10px] font-semibold uppercase tracking-[0.32em] text-[#735c00]">
               Detalle de producto
@@ -99,7 +99,7 @@ export default async function ProductDetailPage({
               {product.detail}
             </p>
 
-            <div className="grid gap-3 pt-2 sm:grid-cols-3">
+            <div className="grid gap-3 pt-2">
               {highlights.map((item) => (
                 <div key={item} className="border border-[#e5ddd2] bg-[#f6f3f2] px-4 py-4">
                   <Plus size={14} className="mb-3 text-[#735c00]" />
@@ -121,13 +121,12 @@ export default async function ProductDetailPage({
               <p className="text-sm text-[#44474d]">{product.stock} unidades disponibles</p>
             </div>
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-4">
               <Button
                 href={buildProductWhatsAppUrl(product)}
-                variant="ghost"
                 target="_blank"
                 rel="noreferrer"
-                className="w-full sm:w-auto"
+                className="w-full"
               >
                 <MessageCircle size={16} />
                 Comprar por WhatsApp
