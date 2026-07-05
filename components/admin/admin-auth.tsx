@@ -16,14 +16,16 @@ export function AdminAuth() {
     setStatus("sending");
     setMessage("");
 
-    if (!ADMIN_EMAIL_ALLOWLIST.includes(email.toLowerCase())) {
+    const normalizedEmail = email.trim().toLowerCase();
+
+    if (!ADMIN_EMAIL_ALLOWLIST.includes(normalizedEmail)) {
       setStatus("error");
       setMessage("Este correo no está autorizado para acceder al admin.");
       return;
     }
 
     const supabase = createBrowserSupabaseClient();
-    const { error } = await supabase.auth.signInWithOtp({ email });
+    const { error } = await supabase.auth.signInWithOtp({ email: normalizedEmail });
 
     if (error) {
       setStatus("error");
@@ -47,7 +49,9 @@ export function AdminAuth() {
       <Button type="submit" disabled={status === "sending"}>
         {status === "sending" ? "Enviando..." : "Enviar enlace"}
       </Button>
-      {message ? <p className={`text-sm ${status === "error" ? "text-red-600" : "text-green-700"}`}>{message}</p> : null}
+      {message ? (
+        <p className={`text-sm ${status === "error" ? "text-red-600" : "text-[#735c00]"}`}>{message}</p>
+      ) : null}
     </form>
   );
 }

@@ -18,6 +18,9 @@ export function EmptyState({
 }: EmptyStateProps) {
   return (
     <div className="empty-state">
+      <div className="empty-state-badge" aria-hidden="true">
+        AURA NOIR
+      </div>
       <h3>{title}</h3>
       <p>{description}</p>
       {children}

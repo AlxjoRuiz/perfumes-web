@@ -10,20 +10,27 @@ export default async function AdminProductsPage() {
   const products = await getAllProducts();
 
   return (
-    <section className="page-panel">
-      <div className="space-y-8">
-        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-sm uppercase tracking-[0.18em] text-[#735c00]">Admin</p>
-            <h1 className="mt-2 text-3xl font-display font-semibold">Productos</h1>
-          </div>
-          <Link href="/admin/productos/nuevo">
-            <button className="button button--ghost">Nuevo producto</button>
+    <section className="space-y-8">
+      <div className="grid gap-6 border border-[#e5ddd2] bg-[#fcf9f8] p-6 sm:p-8 lg:grid-cols-12 lg:items-end">
+        <div className="lg:col-span-8">
+          <p className="mb-4 font-body text-[10px] font-semibold uppercase tracking-[0.32em] text-[#735c00]">
+            Private Catalog
+          </p>
+          <h1 className="max-w-[11ch] font-display text-[clamp(2.4rem,4vw,3.8rem)] font-bold leading-[0.96] tracking-[-0.04em] text-black">
+            Productos
+          </h1>
+          <p className="mt-5 max-w-[46ch] text-[15px] leading-8 text-[#44474d]">
+            Gestiona el catálogo público, el stock y la disponibilidad de cada fragancia.
+          </p>
+        </div>
+        <div className="lg:col-span-4 lg:flex lg:justify-end">
+          <Link href="/admin/productos/nuevo" className="w-full sm:w-auto">
+            <button className="button w-full sm:w-auto">Nuevo producto</button>
           </Link>
         </div>
-
-        <AdminProductTable products={products} />
       </div>
+
+      <AdminProductTable products={products} />
     </section>
   );
 }

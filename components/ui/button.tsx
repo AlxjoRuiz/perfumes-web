@@ -39,7 +39,7 @@ export function Button({
 
   if (href && !isExternal) {
     return (
-      <Link href={href} className={classes} aria-disabled={disabled}> 
+      <Link href={href} className={classes} aria-disabled={disabled}>
         {children}
       </Link>
     );

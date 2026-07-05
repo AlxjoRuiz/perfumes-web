@@ -21,17 +21,21 @@ export default async function EditProductPage({ params }: EditPageProps) {
   }
 
   return (
-    <section className="page-panel">
-      <div className="space-y-6 rounded-[24px] border border-[#e5ddd2] bg-[#fcf9f8] p-10 shadow-[0_18px_35px_rgba(81,95,120,0.06)]">
-        <div>
-          <p className="text-sm uppercase tracking-[0.18em] text-[#735c00]">Admin</p>
-          <h1 className="mt-2 text-3xl font-display font-semibold">Editar producto</h1>
-          <p className="mt-2 max-w-[56ch] text-[#44474d]">
-            Edita los datos del producto <strong>{product.name}</strong> y guarda los cambios.
-          </p>
-        </div>
+    <section className="grid gap-8 lg:grid-cols-12">
+      <div className="lg:col-span-4">
+        <p className="mb-4 font-body text-[10px] font-semibold uppercase tracking-[0.32em] text-[#735c00]">
+          Private Catalog
+        </p>
+        <h1 className="max-w-[10ch] font-display text-[clamp(2.4rem,4vw,3.8rem)] font-bold leading-[0.96] tracking-[-0.04em] text-black">
+          Editar producto
+        </h1>
+        <p className="mt-5 max-w-[36ch] text-[15px] leading-8 text-[#44474d]">
+          Edita los datos del producto <strong>{product.name}</strong> y guarda los cambios.
+        </p>
+      </div>
 
-        <div className="grid gap-6">
+      <div className="lg:col-span-8">
+        <div className="border border-[#e5ddd2] bg-[#fcf9f8] p-6 shadow-[0_18px_35px_rgba(81,95,120,0.06)] sm:p-8">
           <ProductForm product={product} />
         </div>
       </div>

@@ -26,7 +26,7 @@ export function AdminSession() {
   }
 
   return (
-    <div className="flex flex-wrap items-center justify-between gap-4 rounded-[18px] border border-[#d8c39a] bg-[#fff8e7] p-4 text-sm text-[#44474d]">
+    <div className="flex flex-wrap items-center justify-between gap-4 border border-[#e5ddd2] bg-[#fcf9f8] p-4 text-sm text-[#44474d]">
       <span>Sesión iniciada como <strong>{email}</strong></span>
       <Button variant="ghost" onClick={handleSignOut} className="!px-4 !py-3">
         Cerrar sesión

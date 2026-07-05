@@ -40,14 +40,19 @@ export function AdminProductTable({ products }: AdminProductTableProps) {
 
   if (products.length === 0) {
     return (
-      <div className="rounded-[24px] border border-[#e5ddd2] bg-[#fcf9f8] p-10 text-center text-[#44474d]">
-        No hay productos registrados. Crea un producto nuevo para comenzar.
+      <div className="border border-[#e5ddd2] bg-[#fcf9f8] p-10 text-center text-[#44474d]">
+        <p className="mb-2 font-body text-[10px] font-semibold uppercase tracking-[0.24em] text-[#735c00]">
+          Empty catalog
+        </p>
+        <p className="m-0 text-sm leading-7">
+          No hay productos registrados. Crea un producto nuevo para comenzar.
+        </p>
       </div>
     );
   }
 
   return (
-    <div className="overflow-hidden rounded-[24px] border border-[#e5ddd2] bg-[#fcf9f8] shadow-[0_18px_35px_rgba(81,95,120,0.06)]">
+    <div className="overflow-hidden border border-[#e5ddd2] bg-[#fcf9f8] shadow-[0_18px_35px_rgba(81,95,120,0.06)]">
       {errorMessage ? (
         <div className="border-b border-[#d8c39a] bg-[#fff1e1] px-4 py-3 text-sm text-[#b84a2a]">
           {errorMessage}

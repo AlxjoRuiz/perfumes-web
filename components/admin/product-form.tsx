@@ -201,9 +201,9 @@ export function ProductForm({ product }: ProductFormProps) {
         />
       </div>
       {previewUrl ? (
-        <div className="rounded-xl border border-[#d8c39a] bg-white p-4">
+        <div className="border border-[#e5ddd2] bg-[#f6f3f2] p-4">
           <p className="mb-3 text-sm text-[#44474d]">Vista previa de imagen seleccionada</p>
-          <div className="relative h-48 w-full overflow-hidden rounded-[18px]">
+          <div className="relative h-48 w-full overflow-hidden">
             <Image src={previewUrl} alt="Previsualización de producto" fill className="object-contain" />
           </div>
         </div>

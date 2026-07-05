@@ -16,9 +16,16 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Aromas con presencia",
+  title: {
+    default: "AURA NOIR",
+    template: "%s | AURA NOIR",
+  },
   description: "Tienda web de perfumes con landing comercial, carrito y checkout por WhatsApp.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
