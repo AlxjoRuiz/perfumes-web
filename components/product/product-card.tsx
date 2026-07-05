@@ -12,7 +12,7 @@ export function ProductCard({ product }: ProductCardProps) {
     <article className="group flex flex-col">
       <div className="relative mb-6 aspect-[3/4] overflow-hidden bg-[#f6f3f2]">
         <ProductImage src={product.imageUrl} alt={product.name} />
-        <div className="quick-view-overlay absolute inset-0 flex items-end justify-center bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/5 group-hover:opacity-100">
+        <div className="absolute inset-0 flex items-end justify-center bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/5 group-hover:opacity-100">
           <Link
             href={`/productos/${product.slug}`}
             className="mb-6 inline-flex translate-y-2 items-center gap-2 bg-[#fcf9f8] px-5 py-3 font-body text-[11px] font-semibold uppercase tracking-[0.22em] text-[#1b1c1c] shadow-[0_10px_22px_rgba(81,95,120,0.12)] transition-transform duration-300 group-hover:translate-y-0"

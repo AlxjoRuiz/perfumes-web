@@ -20,43 +20,46 @@ export default async function Home() {
 
   return (
     <>
-      <section className="relative flex min-h-[calc(100vh-80px)] items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/perfume-solaris-oud.svg"
-            alt="Aura Noir Signature Bottle"
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#fcf9f8] via-[#fcf9f8]/30 to-transparent" />
-        </div>
-
-        <div className="relative z-10 mx-auto grid w-full max-w-[1280px] grid-cols-1 px-6 py-20 lg:grid-cols-12 lg:px-8">
-          <div className="max-w-[460px] lg:col-span-5 lg:pt-8">
-            <span className="mb-8 block font-body text-[10px] font-semibold uppercase tracking-[0.32em] text-[#d2a03d]">
+      <section className="relative overflow-hidden">
+        <div className="mx-auto grid min-h-[calc(100vh-80px)] max-w-[1280px] grid-cols-1 items-center gap-10 px-6 py-16 lg:grid-cols-12 lg:px-8 lg:py-0">
+          <div className="relative z-10 lg:col-span-5 lg:max-w-[460px] lg:py-16">
+            <span className="mb-7 block font-body text-[10px] font-semibold uppercase tracking-[0.34em] text-[#d2a03d]">
               The Essence of Midnight
             </span>
 
-            <h1 className="m-0 max-w-[11ch] font-display text-[clamp(3.25rem,7vw,6rem)] font-bold leading-[0.92] tracking-[-0.055em] text-black">
+            <h1 className="m-0 max-w-[11ch] font-display text-[clamp(3rem,6vw,5.9rem)] font-bold leading-[0.95] tracking-[-0.055em] text-black">
               Ephemeral Echoes of the Noir
             </h1>
 
-            <p className="mt-8 max-w-[29ch] text-[13px] leading-7 text-[#6a6764]">
+            <p className="mt-7 max-w-[29ch] text-[15px] leading-8 text-[#6a6764]">
               Discover an olfactory journey through shadowed gardens and rare botanical treasures. A collection crafted for the silent observer.
             </p>
 
-            <Button href="#collections" className="mt-6 !rounded-none !px-7 !py-4 !text-[10px] !tracking-[0.26em]">
+            <Button href="#collections" className="mt-7 !rounded-none !px-7 !py-4 !text-[10px] !tracking-[0.28em]">
               Discover the Collection
             </Button>
+          </div>
+
+          <div className="relative lg:col-span-7 lg:self-stretch">
+            <div className="relative h-[420px] overflow-hidden lg:h-[760px]">
+              <Image
+                src="/perfume-solaris-oud.svg"
+                alt="Aura Noir Signature Bottle"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 58vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#fcf9f8] via-[#fcf9f8]/35 to-transparent lg:from-[#fcf9f8]/10 lg:via-transparent lg:to-[#fcf9f8]/15" />
+            </div>
           </div>
         </div>
       </section>
 
       <section id="scent-stories" className="mx-auto max-w-[1280px] px-6 py-[112px] lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-10">
+        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="relative order-2 lg:order-1 lg:col-span-7">
-            <div className="relative aspect-[4/5] w-full overflow-hidden">
+            <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#f6f3f2]">
               <Image
                 src="/perfume-nocturnal-bloom.svg"
                 alt="Botanical Ingredients"
@@ -73,8 +76,8 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className="order-1 flex flex-col gap-7 lg:order-2 lg:col-span-5 lg:pl-12">
-            <span className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-[#e9c349]">
+          <div className="order-1 flex flex-col gap-6 lg:order-2 lg:col-span-5 lg:pl-12">
+            <span className="font-body text-xs font-semibold uppercase tracking-[0.24em] text-[#e9c349]">
               Heritage
             </span>
 
@@ -92,7 +95,7 @@ export default async function Home() {
               Sourced from our private estates in Grasse and the untamed peaks of the Himalayas, our ingredients represent the pinnacle of global biodiversity.
             </p>
 
-            <Button href="/admin" variant="ghost" className="w-fit !px-0 !py-0 !text-[11px] !tracking-[0.18em]">
+            <Button href="/admin" variant="ghost" className="w-fit !px-0 !py-0 !text-[11px] !tracking-[0.22em]">
               Our Story
               <ArrowRight size={18} />
             </Button>
@@ -102,7 +105,7 @@ export default async function Home() {
 
       <section id="collections" className="bg-[#f6f3f2] py-[112px]">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
-          <div className="mb-20 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div className="flex flex-col gap-4">
               <span className="font-body text-[10px] font-semibold uppercase tracking-[0.24em] text-[#e9c349]">
                 Curated
