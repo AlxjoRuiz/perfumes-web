@@ -18,7 +18,7 @@ export function CartPage() {
             <div className="flex flex-col justify-between gap-10 p-8 sm:p-12 lg:col-span-7 lg:min-h-[560px] lg:p-14">
               <div className="space-y-6">
                 <span className="block font-body text-[10px] font-semibold uppercase tracking-[0.32em] text-[#735c00]">
-                  The Cart
+                  El carrito
                 </span>
                 <h1 className="max-w-[10ch] font-display text-[clamp(2.6rem,6vw,5rem)] font-bold leading-[0.94] tracking-[-0.05em] text-black">
                   Tu carrito está vacío
@@ -52,10 +52,10 @@ export function CartPage() {
 
               <div className="absolute bottom-6 left-6 right-6 border border-[#e5ddd2] bg-[#fcf9f8]/95 p-6 backdrop-blur-sm">
                 <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.26em] text-[#735c00]">
-                  Signature Service
+                  Servicio de firma
                 </p>
                 <p className="max-w-[28ch] text-sm leading-7 text-[#44474d]">
-                  Our atelier prepares each order with the same care as a bespoke fragrance commission.
+                  Nuestro atelier prepara cada pedido con el mismo cuidado que una fragancia a medida.
                 </p>
               </div>
             </div>
@@ -70,7 +70,7 @@ export function CartPage() {
       <header className="mb-14 grid gap-6 lg:grid-cols-12 lg:items-end">
         <div className="lg:col-span-8">
           <span className="mb-4 block font-body text-[10px] font-semibold uppercase tracking-[0.32em] text-[#735c00]">
-            Shopping Bag
+            Bolsa de compra
           </span>
           <h1 className="max-w-[12ch] font-display text-[clamp(2.6rem,6vw,5rem)] font-bold leading-[0.94] tracking-[-0.05em] text-black">
             Tu selección AURA NOIR
@@ -83,7 +83,7 @@ export function CartPage() {
         <div className="lg:col-span-4 lg:flex lg:justify-end">
           <div className="inline-flex items-center gap-3 border border-[#e5ddd2] bg-[#fcf9f8] px-4 py-3 text-sm font-semibold text-[#1b1c1c] shadow-[0_10px_24px_rgba(81,95,120,0.05)]">
             <ShoppingBag size={18} className="text-[#735c00]" />
-            <span>{items.length} productos</span>
+            <span>{items.length} artículo{items.length === 1 ? "" : "s"}</span>
           </div>
         </div>
       </header>
@@ -178,7 +178,7 @@ export function CartPage() {
         <aside className="lg:col-span-5 lg:sticky lg:top-28">
           <div className="border border-[#e5ddd2] bg-[#fcf9f8] p-6 shadow-[0_18px_35px_rgba(81,95,120,0.08)] sm:p-8">
             <p className="mb-4 font-body text-[10px] font-semibold uppercase tracking-[0.26em] text-[#735c00]">
-              Order Summary
+              Resumen del pedido
             </p>
             <h2 className="font-display text-[clamp(1.8rem,3vw,2.6rem)] font-semibold tracking-[-0.03em] text-black">
               Resumen del pedido

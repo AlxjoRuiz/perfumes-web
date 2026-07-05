@@ -14,7 +14,7 @@ export default async function AdminProductsPage() {
       <div className="grid gap-6 border border-[#e5ddd2] bg-[#fcf9f8] p-6 sm:p-8 lg:grid-cols-12 lg:items-end">
         <div className="lg:col-span-8">
           <p className="mb-4 font-body text-[10px] font-semibold uppercase tracking-[0.32em] text-[#735c00]">
-            Private Catalog
+            Catálogo privado
           </p>
           <h1 className="max-w-[11ch] font-display text-[clamp(2.4rem,4vw,3.8rem)] font-bold leading-[0.96] tracking-[-0.04em] text-black">
             Productos

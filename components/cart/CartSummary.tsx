@@ -17,7 +17,7 @@ export function CartSummary({ items, total, onClear }: CartSummaryProps) {
 
   return (
     <div className="border border-[#e5ddd2] bg-[#fcf9f8] p-6 shadow-[0_14px_34px_rgba(81,95,120,0.06)] sm:p-8">
-      <p className="mb-4 font-body text-[10px] font-semibold uppercase tracking-[0.26em] text-[#735c00]">Order Summary</p>
+      <p className="mb-4 font-body text-[10px] font-semibold uppercase tracking-[0.26em] text-[#735c00]">Resumen del pedido</p>
       <div className="mb-6 space-y-3 border-t border-[#e5ddd2] pt-6">
         <div className="flex items-center justify-between text-sm text-[#44474d]">
           <span>Items</span>

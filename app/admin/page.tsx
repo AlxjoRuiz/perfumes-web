@@ -47,7 +47,7 @@ export default async function AdminPage() {
       <div className="grid gap-8 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <p className="mb-4 font-body text-[10px] font-semibold uppercase tracking-[0.32em] text-[#735c00]">
-            Private Access
+            Acceso privado
           </p>
           <h1 className="max-w-[10ch] font-display text-[clamp(2.8rem,6vw,5rem)] font-bold leading-[0.95] tracking-[-0.05em] text-black">
             Admin de la tienda
@@ -84,7 +84,7 @@ export default async function AdminPage() {
               </span>
               <div>
                 <p className="font-body text-[10px] font-semibold uppercase tracking-[0.24em] text-[#735c00]">
-                  Email OTP
+                  Correo OTP
                 </p>
                 <p className="text-sm text-[#44474d]">
                   Acceso controlado al panel privado.
