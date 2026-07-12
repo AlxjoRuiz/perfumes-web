@@ -10,7 +10,7 @@ export const revalidate = 0;
 
 export default async function Home() {
   const { products, source, error } = await getActiveProducts();
-  const shouldShowCatalogNote = source !== "supabase" || Boolean(error);
+  const shouldShowCatalogNote = source === "fallback" || Boolean(error);
 
   return (
     <>
@@ -109,7 +109,7 @@ export default async function Home() {
               </h2>
             </div>
             <Link
-              href="/admin"
+              href="/productos"
               className="font-body text-sm font-medium uppercase tracking-[0.12em] text-[#44474d] underline decoration-inherit decoration-offset-8 transition-colors duration-300 hover:text-black"
             >
               Ver todo el catálogo

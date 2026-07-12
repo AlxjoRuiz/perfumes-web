@@ -14,9 +14,7 @@ export function ProductGrid({ items, products }: ProductGridProps) {
     return (
       <EmptyState
         title="Aun no hay productos para mostrar"
-        description="Cuando conectemos Supabase, los productos publicados apareceran aqui automaticamente."
-        actionHref="/admin"
-        actionLabel="Ir al admin"
+        description="Muy pronto encontraras aqui las nuevas creaciones de la casa."
       />
     );
   }

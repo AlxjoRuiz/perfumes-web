@@ -13,8 +13,6 @@ for all
 using (auth.role() = 'authenticated')
 with check (auth.role() = 'authenticated');
 
-alter table storage.objects enable row level security;
-
 drop policy if exists "Public can read product images" on storage.objects;
 create policy "Public can read product images"
 on storage.objects

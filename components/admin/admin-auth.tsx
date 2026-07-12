@@ -2,56 +2,38 @@
 
 import { useState } from "react";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
-import { ADMIN_EMAIL_ALLOWLIST } from "@/components/admin/admin-allowlist";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
 export function AdminAuth() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "redirecting" | "error">("idle");
   const [message, setMessage] = useState<string>("");
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setStatus("sending");
+  const handleGoogleSignIn = async () => {
+    setStatus("redirecting");
     setMessage("");
 
-    const normalizedEmail = email.trim().toLowerCase();
-
-    if (!ADMIN_EMAIL_ALLOWLIST.includes(normalizedEmail)) {
-      setStatus("error");
-      setMessage("Este correo no está autorizado para acceder al admin.");
-      return;
-    }
-
     const supabase = createBrowserSupabaseClient();
-    const { error } = await supabase.auth.signInWithOtp({ email: normalizedEmail });
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback`,
+      },
+    });
 
     if (error) {
       setStatus("error");
       setMessage(error.message);
-      return;
     }
-
-    setStatus("sent");
-    setMessage("Revisa tu correo para iniciar sesión.");
   };
 
   return (
-    <form className="grid gap-4" onSubmit={handleSubmit}>
-      <Input
-        label="Correo electrónico"
-        type="email"
-        value={email}
-        onChange={(event) => setEmail(event.target.value)}
-        required
-      />
-      <Button type="submit" disabled={status === "sending"}>
-        {status === "sending" ? "Enviando..." : "Enviar enlace"}
+    <div className="grid gap-4">
+      <Button type="button" onClick={handleGoogleSignIn} disabled={status === "redirecting"}>
+        {status === "redirecting" ? "Redirigiendo..." : "Iniciar sesión con Google"}
       </Button>
       {message ? (
         <p className={`text-sm ${status === "error" ? "text-red-600" : "text-[#735c00]"}`}>{message}</p>
       ) : null}
-    </form>
+    </div>
   );
 }

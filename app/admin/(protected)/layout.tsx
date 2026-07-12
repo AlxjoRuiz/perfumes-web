@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 import { createServerClient } from "@supabase/auth-helpers-nextjs";
 import { redirect } from "next/navigation";
 import { AdminSession } from "@/components/admin/admin-session";
-import { ADMIN_EMAIL_ALLOWLIST } from "@/components/admin/admin-allowlist";
+import { AdminNav } from "@/components/admin/admin-nav";
 
 export const metadata: Metadata = {
   title: "Admin - Aura Noir",
@@ -27,6 +27,11 @@ export default async function AdminProtectedLayout({ children }: { children: Rea
     cookies: {
       getAll: async () =>
         (await cookieStore.getAll()).map((cookie) => ({ name: cookie.name, value: cookie.value })),
+      setAll: async (cookiesToSet) => {
+        cookiesToSet.forEach(({ name, value, options }) => {
+          cookieStore.set(name, value, options);
+        });
+      },
     },
   });
 
@@ -39,13 +44,21 @@ export default async function AdminProtectedLayout({ children }: { children: Rea
   }
 
   const email = session.user.email.toLowerCase();
-  if (!ADMIN_EMAIL_ALLOWLIST.includes(email)) {
-    redirect("/admin");
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("role")
+    .eq("email", email)
+    .maybeSingle();
+
+  if (!profile || profile.role !== "admin") {
+    await supabase.auth.signOut();
+    redirect("/admin?error=unauthorized");
   }
 
   return (
     <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-6 px-6 py-10 lg:px-8">
       <AdminSession />
+      <AdminNav />
       {children}
     </div>
   );

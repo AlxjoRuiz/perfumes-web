@@ -17,8 +17,6 @@ create policy "Admin users can manage products"
 
 alter table public.products enable row level security;
 
-alter table storage.objects disable row level security;
-
 drop policy if exists "Authenticated users can upload product images" on storage.objects;
 create policy "Admin users can upload product images"
   on storage.objects
@@ -61,5 +59,3 @@ create policy "Admin users can delete product images"
       select 1 from public.profiles p where p.email = auth.email() and p.role = 'admin'
     )
   );
-
-alter table storage.objects enable row level security;

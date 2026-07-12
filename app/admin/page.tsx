@@ -1,9 +1,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { createServerClient } from "@supabase/auth-helpers-nextjs";
-import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { AdminAuth } from "@/components/admin/admin-auth";
 
 export const metadata = {
@@ -39,71 +37,45 @@ async function redirectIfAuthenticated() {
   }
 }
 
-export default async function AdminPage() {
+type AdminPageProps = {
+  searchParams: Promise<{ error?: string }>;
+};
+
+export default async function AdminPage({ searchParams }: AdminPageProps) {
   await redirectIfAuthenticated();
+  const { error } = await searchParams;
 
   return (
-    <section className="mx-auto w-full max-w-[1280px] px-6 py-16 lg:px-8 lg:py-20">
-      <div className="grid gap-8 lg:grid-cols-12">
-        <div className="lg:col-span-7">
-          <p className="mb-4 font-body text-[10px] font-semibold uppercase tracking-[0.32em] text-[#735c00]">
-            Acceso privado
-          </p>
-          <h1 className="max-w-[10ch] font-display text-[clamp(2.8rem,6vw,5rem)] font-bold leading-[0.95] tracking-[-0.05em] text-black">
-            Admin de la tienda
-          </h1>
-          <p className="mt-6 max-w-[42ch] text-[15px] leading-8 text-[#44474d]">
-            Gestiona productos, revisa el inventario y prepara el catálogo para la tienda pública.
-          </p>
+    <section className="mx-auto flex min-h-[70vh] w-full max-w-[480px] flex-col justify-center px-6 py-16 lg:px-8">
+      <p className="mb-4 font-body text-[10px] font-semibold uppercase tracking-[0.32em] text-[#735c00]">
+        Acceso privado
+      </p>
+      <h1 className="mb-8 font-display text-[clamp(2.2rem,4vw,3rem)] font-bold leading-[0.95] tracking-[-0.05em] text-black">
+        Admin de la tienda
+      </h1>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            <div className="border border-[#e5ddd2] bg-[#fcf9f8] p-6">
-              <p className="mb-2 font-body text-[10px] font-semibold uppercase tracking-[0.24em] text-[#735c00]">
-                Acceso
-              </p>
-              <p className="text-sm leading-7 text-[#44474d]">
-                Inicia sesión con correo para entrar al panel de administración y gestionar productos.
-              </p>
-            </div>
-            <div className="border border-[#e5ddd2] bg-[#f6f3f2] p-6">
-              <p className="mb-2 font-body text-[10px] font-semibold uppercase tracking-[0.24em] text-[#735c00]">
-                Enlaces
-              </p>
-              <p className="text-sm leading-7 text-[#44474d]">
-                Abre el catálogo, crea nuevos perfumes o vuelve al inicio público.
-              </p>
-            </div>
+      <div className="border border-[#e5ddd2] bg-[#fcf9f8] p-6 shadow-[0_18px_35px_rgba(81,95,120,0.06)] sm:p-8">
+        <div className="mb-6 flex items-center gap-4 border-b border-[#e5ddd2] pb-5">
+          <span className="inline-flex h-12 w-12 items-center justify-center border border-[#e5ddd2] bg-[#f6f3f2] text-[#735c00]">
+            <ShieldCheck size={22} />
+          </span>
+          <div>
+            <p className="font-body text-[10px] font-semibold uppercase tracking-[0.24em] text-[#735c00]">
+              Google
+            </p>
+            <p className="text-sm text-[#44474d]">
+              Acceso controlado al panel privado.
+            </p>
           </div>
         </div>
 
-        <div className="lg:col-span-5">
-          <div className="border border-[#e5ddd2] bg-[#fcf9f8] p-6 shadow-[0_18px_35px_rgba(81,95,120,0.06)] sm:p-8">
-            <div className="mb-6 flex items-center gap-4 border-b border-[#e5ddd2] pb-5">
-              <span className="inline-flex h-12 w-12 items-center justify-center border border-[#e5ddd2] bg-[#f6f3f2] text-[#735c00]">
-                <ShieldCheck size={22} />
-              </span>
-              <div>
-                <p className="font-body text-[10px] font-semibold uppercase tracking-[0.24em] text-[#735c00]">
-                  Correo OTP
-                </p>
-                <p className="text-sm text-[#44474d]">
-                  Acceso controlado al panel privado.
-                </p>
-              </div>
-            </div>
+        {error === "unauthorized" ? (
+          <p className="mb-4 text-sm text-red-600">
+            Esa cuenta de Google no está autorizada para acceder al admin.
+          </p>
+        ) : null}
 
-            <AdminAuth />
-
-            <div className="mt-6 grid gap-3">
-              <Link href="/admin/productos" className="block">
-                <Button className="w-full">Ver productos</Button>
-              </Link>
-              <Link href="/admin/productos/nuevo" className="block">
-                <Button variant="ghost" className="w-full">Crear nuevo producto</Button>
-              </Link>
-            </div>
-          </div>
-        </div>
+        <AdminAuth />
       </div>
     </section>
   );

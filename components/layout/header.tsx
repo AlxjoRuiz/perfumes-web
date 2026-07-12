@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { User } from "lucide-react";
 import { CartCount } from "@/components/cart/CartCount";
 
 const navItems = [
@@ -33,9 +32,6 @@ export function Header() {
 
         <div className="flex items-center gap-5">
           <CartCount />
-          <Link href="/admin" aria-label="Admin" className="inline-flex items-center text-black">
-            <User size={18} />
-          </Link>
         </div>
       </div>
     </header>
