@@ -55,7 +55,7 @@ export function CartPage() {
                   Servicio de firma
                 </p>
                 <p className="max-w-[28ch] text-sm leading-7 text-[#44474d]">
-                  Nuestro atelier prepara cada pedido con el mismo cuidado que una fragancia a medida.
+                  Preparamos cada pedido con el mismo cuidado que una fragancia a medida.
                 </p>
               </div>
             </div>

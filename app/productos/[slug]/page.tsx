@@ -37,7 +37,7 @@ export async function generateMetadata({
 }
 
 const highlights = [
-  "Creado bajo demanda en nuestro atelier",
+  "Creado bajo demanda con acabado artesanal",
   "Edición limitada con notas profundas y limpias",
   "Acompañamiento por WhatsApp para cerrar el pedido",
 ];

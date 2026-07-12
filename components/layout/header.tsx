@@ -5,7 +5,6 @@ import { CartCount } from "@/components/cart/CartCount";
 const navItems = [
   { href: "/#collections", label: "Collections" },
   { href: "/#scent-stories", label: "Scent Stories" },
-  { href: "/#atelier", label: "Atelier" },
 ];
 
 export function Header() {

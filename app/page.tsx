@@ -1,18 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Plus } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { ProductGrid } from "@/components/product/product-grid";
 import { Button } from "@/components/ui/button";
 import { getActiveProducts } from "@/lib/products";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
-
-const scentNotes = [
-  { number: "01", title: "Notas de salida", desc: "El despertar sensorial inicial" },
-  { number: "02", title: "Notas de corazón", desc: "El carácter y la narrativa central" },
-  { number: "03", title: "Notas de fondo", desc: "La memoria duradera y misteriosa" },
-];
 
 export default async function Home() {
   const { products, source, error } = await getActiveProducts();
@@ -123,54 +117,6 @@ export default async function Home() {
           </div>
 
           <ProductGrid products={products} />
-        </div>
-      </section>
-
-      <section id="atelier" className="mx-auto max-w-[1280px] px-6 py-[112px] lg:px-8">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          <div className="flex min-h-[400px] flex-col justify-between border border-[#e5ddd2] bg-[#fcf9f8] p-12">
-            <div>
-              <span className="mb-8 block font-body text-xs font-semibold uppercase tracking-[0.18em] text-[#e9c349]">
-                Experiencia del atelier
-              </span>
-
-              <h2 className="m-0 mb-6 max-w-[12ch] font-display text-[clamp(2rem,3vw,2.6rem)] font-semibold tracking-[-0.02em] text-black">
-                Crea tu identidad a medida
-              </h2>
-
-              <p className="mb-12 max-w-[34ch] text-[15px] leading-[1.75] text-[#44474d]">
-                Consulta con nuestros perfumistas maestros para diseñar una firma olfativa que resuene con tu arquitectura interior.
-              </p>
-            </div>
-
-            <Button href="/admin" variant="ghost" className="w-fit">
-              Reservar consulta
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 gap-4">
-            {scentNotes.map((note) => (
-              <div
-                key={note.number}
-                className="flex cursor-pointer items-center justify-between border-b border-[#735c0033] bg-[#f0eded] px-8 py-7 transition-all duration-300 hover:bg-[#ece8e4]"
-              >
-                <div className="flex items-center gap-6">
-                  <span className="font-display text-[64px] font-bold text-black opacity-10">
-                    {note.number}
-                  </span>
-                  <div>
-                    <h4 className="m-0 mb-1 font-display text-2xl font-medium text-black">
-                      {note.title}
-                    </h4>
-                    <p className="m-0 text-xs text-[#44474d]">
-                      {note.desc}
-                    </p>
-                  </div>
-                </div>
-                <Plus size={22} className="text-[#735c00]" />
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

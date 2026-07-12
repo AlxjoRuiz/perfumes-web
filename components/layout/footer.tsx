@@ -19,7 +19,6 @@ export function Footer() {
           </span>
           <ul className="m-0 flex list-none flex-col gap-3 p-0">
             <li><Link href="/#collections" className="text-[13px] text-[#e5e2dccc] no-underline transition-colors hover:text-white">Colecciones</Link></li>
-            <li><Link href="/#atelier" className="text-[13px] text-[#e5e2dccc] no-underline transition-colors hover:text-white">Servicios de atelier</Link></li>
             <li><Link href="/admin" className="text-[13px] text-[#e5e2dccc] no-underline transition-colors hover:text-white">Sostenibilidad</Link></li>
           </ul>
         </div>
@@ -40,7 +39,7 @@ export function Footer() {
             Mantente al tanto
           </span>
           <p className="m-0 max-w-[26ch] text-[13px] leading-7 text-[#e5e2dccc]">
-            Recibe historias de aroma seleccionadas y novedades del atelier.
+            Recibe historias de aroma seleccionadas y novedades de la casa.
           </p>
           <div className="flex items-center gap-3 border-b border-[#e5e2dc33] pb-3">
             <input
