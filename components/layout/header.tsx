@@ -3,9 +3,9 @@ import { User } from "lucide-react";
 import { CartCount } from "@/components/cart/CartCount";
 
 const navItems = [
-  { href: "#collections", label: "Collections" },
-  { href: "#scent-stories", label: "Scent Stories" },
-  { href: "#atelier", label: "Atelier" },
+  { href: "/#collections", label: "Collections" },
+  { href: "/#scent-stories", label: "Scent Stories" },
+  { href: "/#atelier", label: "Atelier" },
 ];
 
 export function Header() {
@@ -14,7 +14,9 @@ export function Header() {
       <div className="mx-auto flex h-20 max-w-[1280px] items-center justify-between gap-6 px-6 lg:px-8">
         <div className="shrink-0">
           <p className="m-0 font-display text-[1.2rem] font-semibold leading-none tracking-[-0.02em] text-black md:text-[1.6rem]">
-            AURA NOIR
+            <Link href="/#page-hero" className="inline-block">
+              AURA NOIR
+            </Link>
           </p>
         </div>
 

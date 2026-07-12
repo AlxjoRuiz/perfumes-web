@@ -20,7 +20,7 @@ export default async function Home() {
 
   return (
     <>
-      <section className="relative overflow-hidden">
+      <section id="page-hero" className="relative overflow-hidden">
         <div className="mx-auto grid min-h-[calc(100vh-80px)] max-w-[1280px] grid-cols-1 items-center gap-10 px-6 py-16 lg:grid-cols-12 lg:px-8 lg:py-0">
           <div className="relative z-10 lg:col-span-5 lg:max-w-[460px] lg:py-16">
             <span className="mb-7 block font-body text-[10px] font-semibold uppercase tracking-[0.34em] text-[#d2a03d]">
