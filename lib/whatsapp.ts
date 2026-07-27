@@ -1,7 +1,7 @@
 import type { CartItem } from "@/types/cart";
 
 const WHATSAPP_BASE = "https://wa.me";
-const DEFAULT_WHATSAPP_PHONE = "573000000000";
+const DEFAULT_WHATSAPP_PHONE = "3161465867";
 
 function formatCurrency(value: number) {
   return new Intl.NumberFormat("es-CO", {
