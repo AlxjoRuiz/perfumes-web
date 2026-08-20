@@ -176,11 +176,11 @@ export async function getProductBySlug(
   const { data, error } = await fetchSupabaseProducts(query);
 
   if (error === "missing-config") {
-    return fallbackProducts.find((product) => product.slug === slug) ?? null;
+    return fallbackProducts.find((product) => product.slug === slug && product.is_active) ?? null;
   }
 
   if (error || !data?.[0]) {
-    return fallbackProducts.find((product) => product.slug === slug) ?? null;
+    return fallbackProducts.find((product) => product.slug === slug && product.is_active) ?? null;
   }
 
   return toDetail(data[0]);
