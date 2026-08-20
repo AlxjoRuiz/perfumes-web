@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | AURA NOIR",
   },
   description: "Tienda web de perfumes con landing comercial, carrito y checkout por WhatsApp.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   robots: {
     index: true,
     follow: true,

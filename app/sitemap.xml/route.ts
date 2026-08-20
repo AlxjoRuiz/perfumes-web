@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getActiveProducts } from "@/lib/products";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 const baseUrl = siteUrl.replace(/\/$/, "");
 
 export async function GET() {

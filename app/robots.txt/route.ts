@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 const sitemapUrl = `${siteUrl.replace(/\/$/, "")}/sitemap.xml`;
 
 export function GET() {
