@@ -7,7 +7,7 @@ import { AdminSession } from "@/components/admin/admin-session";
 import { AdminNav } from "@/components/admin/admin-nav";
 
 export const metadata: Metadata = {
-  title: "Admin - Aura Noir",
+  title: "Admin - Theonys Parfum",
   robots: {
     index: false,
     follow: false,

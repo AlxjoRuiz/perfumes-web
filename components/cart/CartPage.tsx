@@ -42,7 +42,7 @@ export function CartPage() {
               <div className="absolute inset-0">
                 <Image
                   src="/perfume-hero.svg"
-                  alt="AURA NOIR hero bottle"
+                  alt="THEONYS PARFUM hero bottle"
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"
                   className="object-cover"
@@ -73,7 +73,7 @@ export function CartPage() {
             Bolsa de compra
           </span>
           <h1 className="max-w-[12ch] font-display text-[clamp(2.6rem,6vw,5rem)] font-bold leading-[0.94] tracking-[-0.05em] text-black">
-            Tu selección AURA NOIR
+            Tu selección THEONYS PARFUM
           </h1>
           <p className="mt-5 max-w-[42ch] text-[15px] leading-8 text-[#44474d]">
             Cada fragancia se prepara bajo demanda. Revisa tu selección y completa el pedido con un asesor por WhatsApp.

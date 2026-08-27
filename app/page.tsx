@@ -38,7 +38,7 @@ export default async function Home() {
             <div className="relative h-[420px] overflow-hidden lg:h-[760px]">
               <Image
                 src="/perfume-solaris-oud.svg"
-                alt="Aura Noir Signature Bottle"
+                alt="Theonys Parfum Signature Bottle"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 58vw"
@@ -82,7 +82,7 @@ export default async function Home() {
             <div className="h-px w-20 bg-[#735c00]" />
 
             <p className="m-0 max-w-[36ch] text-base leading-[1.75] text-[#44474d]">
-              En AURA NOIR entendemos la fragancia como una forma arquitectónica. Nuestra herencia nace de la precisión del maestro alquimista y del alma del artista de vanguardia.
+              En THEONYS PARFUM entendemos la fragancia como una forma arquitectónica. Nuestra herencia nace de la precisión del maestro alquimista y del alma del artista de vanguardia.
             </p>
 
             <p className="m-0 max-w-[36ch] text-base leading-[1.75] text-[#44474d]">

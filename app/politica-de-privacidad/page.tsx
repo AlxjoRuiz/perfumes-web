@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata = {
-  title: "Política de privacidad - Aura Noir",
+  title: "Política de privacidad - Theonys Parfum",
 };
 
 export default function PrivacyPolicyPage() {

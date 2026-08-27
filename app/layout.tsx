@@ -17,8 +17,8 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "AURA NOIR",
-    template: "%s | AURA NOIR",
+    default: "THEONYS PARFUM",
+    template: "%s | THEONYS PARFUM",
   },
   description: "Tienda web de perfumes con landing comercial, carrito y checkout por WhatsApp.",
    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),

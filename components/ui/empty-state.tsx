@@ -19,7 +19,7 @@ export function EmptyState({
   return (
     <div className="empty-state">
       <div className="empty-state-badge" aria-hidden="true">
-        AURA NOIR
+        THEONYS PARFUM
       </div>
       <h3>{title}</h3>
       <p>{description}</p>

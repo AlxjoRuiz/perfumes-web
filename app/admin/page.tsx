@@ -5,7 +5,7 @@ import { ShieldCheck } from "lucide-react";
 import { AdminAuth } from "@/components/admin/admin-auth";
 
 export const metadata = {
-  title: "Admin - Aura Noir",
+  title: "Admin - Theonys Parfum",
   robots: {
     index: false,
     follow: false,

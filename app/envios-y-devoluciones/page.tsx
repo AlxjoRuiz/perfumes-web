@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata = {
-  title: "Envíos y devoluciones - Aura Noir",
+  title: "Envíos y devoluciones - Theonys Parfum",
 };
 
 export default function ShippingAndReturnsPage() {

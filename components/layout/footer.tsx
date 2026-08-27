@@ -6,7 +6,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
         <div className="flex flex-col gap-5">
           <span className="m-0 font-display text-[1.35rem] font-semibold tracking-[-0.02em] text-[#e5e2dc]">
-            AURA NOIR
+            THEONYS PARFUM
           </span>
           <p className="m-0 max-w-[23ch] text-[13px] leading-7 text-[#e5e2dccc]">
             Creando memorias olfativas desde 1924. Un testimonio de lujo invisible y elegancia eterna.
@@ -37,7 +37,7 @@ export function Footer() {
 
       <div className="mx-auto mt-20 max-w-[1280px] border-t border-[#e5e2dc14] pt-8 text-center">
         <p className="m-0 text-[9px] font-semibold uppercase tracking-[0.28em] text-[#e5e2dc66]">
-          © 2024 AURA NOIR PARFUMERIE. ALL RIGHTS RESERVED.
+          © 2024 THEONYS PARFUM PARFUMERIE. ALL RIGHTS RESERVED.
         </p>
       </div>
     </footer>

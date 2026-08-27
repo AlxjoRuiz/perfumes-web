@@ -13,7 +13,7 @@ export function Header() {
         <div className="shrink-0">
           <p className="m-0 font-display text-[1.2rem] font-semibold leading-none tracking-[-0.02em] text-black md:text-[1.6rem]">
             <Link href="/#page-hero" className="inline-block">
-              AURA NOIR
+              THEONYS PARFUM
             </Link>
           </p>
         </div>

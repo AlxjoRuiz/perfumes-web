@@ -3,7 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata = {
-  title: "Contacto - Aura Noir",
+  title: "Contacto - Theonys Parfum",
 };
 
 export default function ContactPage() {
